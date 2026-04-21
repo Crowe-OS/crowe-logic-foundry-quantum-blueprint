@@ -4,7 +4,7 @@
 [![Release](https://img.shields.io/github/v/release/Crowe-OS/crowe-logic-foundry-quantum-blueprint)](https://github.com/Crowe-OS/crowe-logic-foundry-quantum-blueprint/releases)
 [![Discussions](https://img.shields.io/github/discussions/Crowe-OS/crowe-logic-foundry-quantum-blueprint)](https://github.com/Crowe-OS/crowe-logic-foundry-quantum-blueprint/discussions)
 [![Ising Calibration](https://img.shields.io/badge/NVIDIA-Ising%20Calibration%201-76b900)](https://huggingface.co/nvidia/ising-calibration-1)
-[![Hugging Face Space](https://img.shields.io/badge/%F0%9F%A4%97%20Space-CroweLogic%2Fising--calibration--blueprint-yellow)](https://huggingface.co/spaces/CroweLogic/ising-calibration-blueprint)
+[![Hugging Face Space](https://img.shields.io/badge/%F0%9F%A4%97%20Space-mike1210%2Fising--calibration--blueprint-yellow)](https://huggingface.co/spaces/mike1210/ising-calibration-blueprint)
 
 **An end-to-end agentic workflow for quantum processor calibration, built on Crowe Logic Foundry, Synapse-Lang, Qubit-Flow, and NVIDIA Ising.**
 
