@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "crowe-logic-quantum-blueprint"
+version = "0.1.0"
+description = "Agentic QPU calibration blueprint. Crowe Logic Foundry orchestrator + Synapse-Lang + Qubit-Flow + NVIDIA Ising Calibration."
+readme = "README.md"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.10"
+authors = [
+    {name = "Michael Crowe", email = "michael@crowelogic.com"},
+]
+keywords = ["quantum", "agent", "nvidia", "ising", "calibration", "qec", "nemo", "crowe-logic"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: Apache Software License",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "httpx>=0.27",
+    "pydantic>=2.7",
+    "pyyaml>=6.0",
+    "rich>=13.0",
+    "click>=8.1",
+]
+
+[project.optional-dependencies]
+foundry = [
+    # Install Crowe Logic Foundry locally to run the full orchestrator path.
+    # pip install -e /path/to/crowe-logic-foundry
+]
+quantum = [
+    "qiskit>=1.0",
+    "synapse-lang>=0.1",
+    "qubit-flow>=0.1",
+]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.5",
+]
+
+[project.scripts]
+clqb = "blueprints.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Crowe-OS/crowe-logic-foundry-quantum-blueprint"
+Documentation = "https://github.com/Crowe-OS/crowe-logic-foundry-quantum-blueprint#readme"
+Issues = "https://github.com/Crowe-OS/crowe-logic-foundry-quantum-blueprint/issues"
+
+[tool.setuptools]
+packages = ["blueprints"]
