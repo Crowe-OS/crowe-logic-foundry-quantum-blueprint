@@ -1,6 +1,6 @@
 # QPU vendor outreach emails
 
-**Send from:** michael@crowelogic.com
+**Send from:** mike@southwestmushrooms.com
 **When:** 2-3 days after the GitHub repo and HF Space are public, so recipients can verify the work is real.
 **Subject template:** `Agentic calibration loop for <company>, using NVIDIA Ising + open quantum stack`
 
@@ -37,7 +37,7 @@ orchestrator pattern, or to jump on a call.
 
 Michael Crowe
 Crowe Logic, Inc.
-michael@crowelogic.com
+mike@southwestmushrooms.com
 ```
 
 ---

@@ -55,7 +55,7 @@ on this story; let me know if there is interest.
 
 Michael Crowe
 Crowe Logic, Inc.
-michael@crowelogic.com
+mike@southwestmushrooms.com
 ```
 
 ## Outlet-specific notes

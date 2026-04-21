@@ -62,7 +62,7 @@ based on editorial feedback.
 Thanks for considering,
 Michael Crowe
 Crowe Logic, Inc.
-michael@crowelogic.com
+mike@southwestmushrooms.com
 ```
 
 ## If you don't hear back

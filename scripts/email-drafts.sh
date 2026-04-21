@@ -48,7 +48,7 @@ What is the right path to do that? Research collaboration, IBM Quantum Network a
 
 Michael Crowe
 Crowe Logic, Inc.
-michael@crowelogic.com
+mike@southwestmushrooms.com
 EOF
 )
 

@@ -27,7 +27,7 @@
 |------------------------------|-------|
 | Founder name                 | Michael Crowe |
 | Title                        | Founder & CEO |
-| Email                        | michael@crowelogic.com |
+| Email                        | mike@southwestmushrooms.com |
 | Background summary           | Mycologist and software engineer. Founder of Crowe Logic, Inc. and Southwest Mushrooms. Author of the Synapse-Lang and Qubit-Flow PyPI packages for quantum programming. Building Crowe Logic Foundry as a universal AI agent runtime with scientific-computing primitives. |
 
 ## Product / technology fields

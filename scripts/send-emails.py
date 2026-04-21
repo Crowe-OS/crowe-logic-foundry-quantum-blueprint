@@ -25,7 +25,7 @@ Safety rails this script enforces:
 
 Usage:
 
-  export GMAIL_USER="michael@crowelogic.com"
+  export GMAIL_USER="mike@southwestmushrooms.com"
   export GMAIL_APP_PASSWORD="xxxx xxxx xxxx xxxx"       # from myaccount.google.com/apppasswords
 
   # Preview what would be sent, no sending:
@@ -103,7 +103,7 @@ VENDORS: list[Vendor] = [
             "detail on the orchestrator pattern, or to jump on a call.\n\n"
             "Michael Crowe\n"
             "Crowe Logic, Inc.\n"
-            "michael@crowelogic.com\n"
+            "mike@southwestmushrooms.com\n"
         ),
     ),
     Vendor(
