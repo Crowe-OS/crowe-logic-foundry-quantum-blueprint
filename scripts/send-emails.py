@@ -63,6 +63,29 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 LOG_PATH = ROOT / "launch" / "sent.log"
+ENV_FILE = ROOT / ".env.local"
+
+
+def _load_env_local() -> None:
+    """Load KEY=VALUE lines from .env.local into os.environ without
+    overriding values already set by the caller's shell. Safe to call
+    even if the file is missing. Values may be quoted or bare."""
+    if not ENV_FILE.is_file():
+        return
+    for raw in ENV_FILE.read_text().splitlines():
+        line = raw.strip()
+        if not line or line.startswith("#"):
+            continue
+        if "=" not in line:
+            continue
+        key, _, value = line.partition("=")
+        key = key.strip()
+        value = value.strip().strip('"').strip("'")
+        if key and key not in os.environ:
+            os.environ[key] = value
+
+
+_load_env_local()
 
 SMTP_HOST = "smtp.gmail.com"
 SMTP_PORT = 587
@@ -102,7 +125,9 @@ VENDORS: list[Vendor] = [
             "Quantum Network access, or something else? Happy to share more "
             "detail on the orchestrator pattern, or to jump on a call.\n\n"
             "Michael Crowe\n"
-            "Crowe Logic, Inc.\n"
+            "Founder, Crowe Logic, Inc.\n"
+            "https://crowelogic.com\n"
+            "github.com/Crowe-OS\n"
             "mike@southwestmushrooms.com\n"
         ),
     ),
@@ -129,7 +154,10 @@ VENDORS: list[Vendor] = [
             "workflow handles drift across long jobs, since that is exactly "
             "where this loop shape earns its keep.\n\n"
             "Michael Crowe\n"
-            "Crowe Logic, Inc.\n"
+            "Founder, Crowe Logic, Inc.\n"
+            "https://crowelogic.com\n"
+            "github.com/Crowe-OS\n"
+            "mike@southwestmushrooms.com\n"
         ),
     ),
     Vendor(
@@ -154,7 +182,10 @@ VENDORS: list[Vendor] = [
             "Research collaboration via the Quantinuum Nexus program, or "
             "something else?\n\n"
             "Michael Crowe\n"
-            "Crowe Logic, Inc.\n"
+            "Founder, Crowe Logic, Inc.\n"
+            "https://crowelogic.com\n"
+            "github.com/Crowe-OS\n"
+            "mike@southwestmushrooms.com\n"
         ),
     ),
     Vendor(
@@ -179,7 +210,10 @@ VENDORS: list[Vendor] = [
             "to see in the open layer to make this easier to integrate with "
             "Pulser.\n\n"
             "Michael Crowe\n"
-            "Crowe Logic, Inc.\n"
+            "Founder, Crowe Logic, Inc.\n"
+            "https://crowelogic.com\n"
+            "github.com/Crowe-OS\n"
+            "mike@southwestmushrooms.com\n"
         ),
     ),
     Vendor(
@@ -203,7 +237,10 @@ VENDORS: list[Vendor] = [
             "What is the right path? QCS research access, a research "
             "collaboration, or a direct pilot?\n\n"
             "Michael Crowe\n"
-            "Crowe Logic, Inc.\n"
+            "Founder, Crowe Logic, Inc.\n"
+            "https://crowelogic.com\n"
+            "github.com/Crowe-OS\n"
+            "mike@southwestmushrooms.com\n"
         ),
     ),
     Vendor(
@@ -227,7 +264,10 @@ VENDORS: list[Vendor] = [
             "what you would want to see in the open layer to make it "
             "production-viable for your scale.\n\n"
             "Michael Crowe\n"
-            "Crowe Logic, Inc.\n"
+            "Founder, Crowe Logic, Inc.\n"
+            "https://crowelogic.com\n"
+            "github.com/Crowe-OS\n"
+            "mike@southwestmushrooms.com\n"
         ),
     ),
     Vendor(
@@ -252,7 +292,10 @@ VENDORS: list[Vendor] = [
             "orchestrator pattern meets your production decoder "
             "infrastructure.\n\n"
             "Michael Crowe\n"
-            "Crowe Logic, Inc.\n"
+            "Founder, Crowe Logic, Inc.\n"
+            "https://crowelogic.com\n"
+            "github.com/Crowe-OS\n"
+            "mike@southwestmushrooms.com\n"
         ),
     ),
 ]
