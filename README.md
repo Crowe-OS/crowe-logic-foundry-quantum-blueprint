@@ -1,5 +1,11 @@
 # Crowe Logic Foundry — Agentic QPU Calibration Blueprint
 
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/Crowe-OS/crowe-logic-foundry-quantum-blueprint)](https://github.com/Crowe-OS/crowe-logic-foundry-quantum-blueprint/releases)
+[![Discussions](https://img.shields.io/github/discussions/Crowe-OS/crowe-logic-foundry-quantum-blueprint)](https://github.com/Crowe-OS/crowe-logic-foundry-quantum-blueprint/discussions)
+[![Ising Calibration](https://img.shields.io/badge/NVIDIA-Ising%20Calibration%201-76b900)](https://huggingface.co/nvidia/ising-calibration-1)
+[![Hugging Face Space](https://img.shields.io/badge/%F0%9F%A4%97%20Space-CroweLogic%2Fising--calibration--blueprint-yellow)](https://huggingface.co/spaces/CroweLogic/ising-calibration-blueprint)
+
 **An end-to-end agentic workflow for quantum processor calibration, built on Crowe Logic Foundry, Synapse-Lang, Qubit-Flow, and NVIDIA Ising.**
 
 Most coding agents can help you write a quantum circuit. This blueprint shows an agent that can *run the full loop*: interpret real QPU measurement output, decide what to recalibrate, generate the corrective pulse sequence, execute it, and propose the next experiment. The quantum stack is first-class, not a chat transcript.
@@ -94,7 +100,13 @@ data/
   sample_qpu_trace.json   Synthetic superconducting-qubit trace for demos
 docs/
   ARCHITECTURE.md         How the pieces fit and why
-  BLOG_POST.md            Narrative draft for public launch
+hf_space/                 Hugging Face Space (Gradio app) for browser demo
+launch/                   Launch kit: ready-to-send drafts for every channel
+scripts/
+  launch-day.sh           Orchestrates opening every pre-filled launch URL
+  email-drafts.sh         Creates Mail.app drafts for vendor outreach (review + send)
+  send-emails.py          Programmatic Gmail SMTP sender with safety rails
+  traction.sh             Dashboard for stars, views, HF Space status
 tests/
 ```
 
