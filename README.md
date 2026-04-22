@@ -1,6 +1,5 @@
 # Crowe Logic Foundry — Agentic QPU Calibration Blueprint
 
-[![CI](https://github.com/Crowe-OS/crowe-logic-foundry-quantum-blueprint/actions/workflows/ci.yml/badge.svg)](https://github.com/Crowe-OS/crowe-logic-foundry-quantum-blueprint/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 [![Release](https://img.shields.io/github/v/release/Crowe-OS/crowe-logic-foundry-quantum-blueprint)](https://github.com/Crowe-OS/crowe-logic-foundry-quantum-blueprint/releases)
 [![Discussions](https://img.shields.io/github/discussions/Crowe-OS/crowe-logic-foundry-quantum-blueprint)](https://github.com/Crowe-OS/crowe-logic-foundry-quantum-blueprint/discussions)
