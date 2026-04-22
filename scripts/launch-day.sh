@@ -150,6 +150,52 @@ step_hf_space() {
 }
 
 ###############################################################################
+# Step: Transfer the Space from mike1210 to CroweLogic org (post rate-limit)
+###############################################################################
+
+step_hf_space_transfer() {
+    echo ""
+    echo "=== HF Space namespace transfer ==="
+    echo "Moves the Space from mike1210/ to CroweLogic/ and updates the"
+    echo "GitHub README badge to match. HF will 301-redirect the old URL."
+    echo ""
+    python3 - <<'PY'
+import os
+from pathlib import Path
+env = Path(".env.local")
+for line in env.read_text().splitlines():
+    line = line.strip()
+    if line and not line.startswith("#") and "=" in line:
+        k, _, v = line.partition("=")
+        os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
+from huggingface_hub import HfApi
+api = HfApi(token=os.environ["HF_TOKEN"])
+try:
+    api.move_repo(
+        from_id="mike1210/ising-calibration-blueprint",
+        to_id="CroweLogic/ising-calibration-blueprint",
+        repo_type="space",
+    )
+    print("Space moved to CroweLogic/ising-calibration-blueprint")
+    print("HF will redirect the old URL for at least 90 days.")
+except Exception as e:
+    print(f"Transfer failed: {e}")
+    print("Verify: (1) CroweLogic org exists, (2) you are a member with write access,")
+    print("        (3) CroweLogic/ising-calibration-blueprint is not already taken.")
+    raise SystemExit(1)
+PY
+    # Flip the README badge back to CroweLogic
+    sed -i.bak 's|spaces/mike1210/ising-calibration-blueprint|spaces/CroweLogic/ising-calibration-blueprint|g; s|mike1210%2Fising--calibration--blueprint|CroweLogic%2Fising--calibration--blueprint|g' README.md
+    rm -f README.md.bak
+    git add README.md
+    git commit -q -m "Transfer HF Space from mike1210 to CroweLogic org; update README badge"
+    git push -q origin main
+    echo ""
+    echo "Done. Updated badge in GitHub README, pushed."
+    open_url "https://huggingface.co/spaces/CroweLogic/ising-calibration-blueprint"
+}
+
+###############################################################################
 # Step: Fork huggingface/blog and stage the blog PR branch
 ###############################################################################
 
@@ -233,6 +279,7 @@ case "${1:-}" in
     x) step_x ;;
     forum) step_forum ;;
     hf-space) step_hf_space ;;
+    hf-space-transfer) step_hf_space_transfer ;;
     hf-blog-fork) step_hf_blog_fork ;;
     inception) step_inception ;;
     emails) step_emails ;;
