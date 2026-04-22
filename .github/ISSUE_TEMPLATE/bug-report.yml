@@ -1,0 +1,49 @@
+name: Bug report
+description: Report unexpected behavior in the blueprint
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Describe the bug and what you expected instead.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Mode
+      options:
+        - Mock (no credentials)
+        - Live (NVIDIA_API_KEY set)
+        - Hugging Face Space
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. clqb calibrate ...
+        2. observe ...
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version / commit
+      description: Output of `git rev-parse --short HEAD` or the release tag you are on.
+      placeholder: v0.1.0
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Python version, OS, anything relevant.
+      render: shell

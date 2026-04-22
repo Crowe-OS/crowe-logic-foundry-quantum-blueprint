@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Discussion / general question
+    url: https://github.com/Crowe-OS/crowe-logic-foundry-quantum-blueprint/discussions
+    about: Open-ended questions, design feedback, and architectural proposals go in Discussions.
+  - name: NVIDIA Ising Calibration model card
+    url: https://huggingface.co/nvidia/ising-calibration-1
+    about: Questions about the Ising model itself, its training data, or its evaluation belong on the model card's Community tab.

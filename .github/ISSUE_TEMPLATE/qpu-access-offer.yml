@@ -1,0 +1,70 @@
+name: QPU access offer
+description: You operate a quantum processor and want to test the blueprint against real calibration traces.
+title: "[QPU ACCESS] "
+labels: ["qpu-access", "partnership"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for considering testing this blueprint against real hardware. This is exactly
+        the signal we are looking for. We will respond within 48 hours.
+
+  - type: input
+    id: organization
+    attributes:
+      label: Organization
+      placeholder: e.g. "IBM Quantum", "University of X quantum lab"
+    validations:
+      required: true
+
+  - type: input
+    id: contact
+    attributes:
+      label: Preferred contact (email or reply here)
+      placeholder: you@example.com
+    validations:
+      required: true
+
+  - type: dropdown
+    id: modality
+    attributes:
+      label: Qubit modality
+      options:
+        - Superconducting transmon
+        - Trapped ion
+        - Neutral atom
+        - Silicon spin / quantum dot
+        - Topological
+        - Photonic
+        - Other (describe in additional context)
+    validations:
+      required: true
+
+  - type: textarea
+    id: device-details
+    attributes:
+      label: Device details
+      description: System name, qubit count, typical error rates, control stack (Qiskit Runtime, Braket, Pulser, custom).
+      placeholder: |
+        e.g. IBM Quantum Heron, 133 qubits, 1Q error ~0.03%, 2Q error ~0.3%, via Qiskit Runtime
+    validations:
+      required: true
+
+  - type: dropdown
+    id: access-shape
+    attributes:
+      label: What shape of access are you offering?
+      options:
+        - Research collaboration (joint publication welcome)
+        - Evaluation access (NDA ok)
+        - Pilot / paid engagement
+        - Open exchange of traces only (you share data, we share findings)
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Anything else that would help us make the integration concrete. Particular calibration experiments you'd like tested, specific drift behaviors you're investigating, a target timeline.

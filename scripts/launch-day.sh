@@ -20,6 +20,9 @@
 
 set -euo pipefail
 
+# Always operate from the repo root regardless of where the script is invoked.
+cd "$(dirname "$0")/.."
+
 REPO_URL="https://github.com/Crowe-OS/crowe-logic-foundry-quantum-blueprint"
 SPACE_URL="https://huggingface.co/spaces/CroweLogic/ising-calibration-blueprint"
 
